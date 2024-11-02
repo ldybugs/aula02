@@ -2,15 +2,17 @@ import styles from '../styles/listaProdutos.module.css'
 
 export default function ListaProdutos( {lista} ){
     return(
+      <body className={styles.body}>
         <ul className={styles.blocoLista}>
         {lista.map(produto => (
-          <li key={produto.id}>
-            <h2>{produto.title}</h2>
-            <p>{produto.description}</p>
-            <p>Preço: ${produto.price}</p>
-            <img src={produto.image} alt={produto.title} width={100} />
+          <li className={styles.productBorder} key={produto.id}>
+            <h2 className={styles.titulo}>{produto.title}</h2>
+            <p className={styles.descricao}>{produto.description}</p>
+            <p className={styles.preco}>Preço: ${produto.price}</p>
+            <img className={styles.image} src={produto.image} alt={produto.title} width={100} />
           </li>
         ))}
       </ul>
+      </body>
     )
 }
