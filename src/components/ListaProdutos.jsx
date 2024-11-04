@@ -1,6 +1,16 @@
 import styles from '../styles/listaProdutos.module.css'
+import Loading from '../components/Loading'
 
 export default function ListaProdutos( {lista} ){
+  
+    if(lista.length === 0){
+      return (
+        <>
+          <Loading loading/>
+        </>
+      )
+    }
+    
     return(
       <body className={styles.body}>
         <ul className={styles.blocoLista}>
